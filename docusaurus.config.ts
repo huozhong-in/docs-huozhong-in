@@ -62,7 +62,7 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    // image: 'img/docusaurus-social-card.jpg',
     colorMode: {
       respectPrefersColorScheme: true,
     },
@@ -79,14 +79,14 @@ const config: Config = {
           position: 'left',
           label: 'Tutorial',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        // {to: '/blog', label: 'Blog', position: 'left'},
         {
           type: 'localeDropdown',
           position: 'right',
         },
         {
           href: 'https://github.com/huozhong-in/knowledge-focus',
-          label: 'KnowledgeFocus GitHub',
+          label: 'GitHub',
           position: 'right',
         },
       ],
@@ -95,16 +95,16 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Learn',
           items: [
             {
               label: 'Tutorial',
               to: '/docs/intro',
             },
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
+            // {
+            //   label: 'Blog',
+            //   to: '/blog',
+            // },
             {
               label: 'GitHub',
               href: 'https://github.com/huozhong-in/knowledge-focus',
@@ -129,7 +129,7 @@ const config: Config = {
           ],
         },
         {
-          title: 'More',
+          title: 'Legal',
           items: [
             {
               label: 'Privacy Policy',
@@ -142,7 +142,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Huozhong, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Huozhong.In`,
     },
     prism: {
       theme: prismThemes.github,

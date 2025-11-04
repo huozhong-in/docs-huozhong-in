@@ -2,46 +2,18 @@
 sidebar_position: 1
 ---
 
-# 中文
+# 产品功能和特点
 
-Let's discover **Docusaurus in less than 5 minutes**.
+KnowledgeFocus是macOS原生桌面应用。
 
-## Getting Started
+## 产品功能
 
-Get started by **creating a new site**.
+- 是搜索本机文件的离线搜索引擎。通过扫描本机文件建立索引，并且在后续监控文件变动，及时更新索引。
+- 是本机知识文件的推荐引擎。通过自动解析和读取部分文件内容，高速给文件打标签，帮助用户发现沉睡在硬盘深处的历史文件。
+- “和你的文件聊天”。能针对文件内知识问答，更进一步的“AI共读模式”跟你共享相同的阅读进度和视野，结合外部数据工具和商业模型API，实现非常独特的共读体验。
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+##产品特点
 
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 20.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+- KF是本机文件知识发现和数据工作台，以数据隐私为第一优先级，帮助知识工作者发现、归集和利用这些知识，在AI时代不断积累和强化数据价值。
+- KF内置视觉小模型，可以不联网的情况下实现很多数据的处理和知识问答，压榨本地算力价值，回收硬件沉默成本。
+- KF是桌面智能体平台，是下一代RPA载体，拥有观察和控制两类能力，在取得OS授权后可以操控整个计算机，拥有无限可能。
