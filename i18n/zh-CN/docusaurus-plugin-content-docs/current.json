@@ -1,0 +1,11 @@
+{
+    "sidebar.tutorialSidebar.category.Manual": {
+      "message": "使用手册",
+      "description": "The label for category 'Manual' in sidebar 'tutorialSidebar'"
+    },
+    "sidebar.tutorialSidebar.category.Developer Documentation": {
+      "message": "开发者文档",
+      "description": "The label for category 'Developer Documentation' in sidebar 'tutorialSidebar'"
+    }
+  }
+  

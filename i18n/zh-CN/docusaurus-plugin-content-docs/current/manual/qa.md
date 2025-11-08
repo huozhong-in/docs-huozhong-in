@@ -2,9 +2,9 @@
 sidebar_position: 8
 ---
 
-# Q and A
+# 常见问题
 
-## 常见问题
+## Q and A
 
 ### 中国境内使用KF遇到障碍
 
