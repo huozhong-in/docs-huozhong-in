@@ -2,7 +2,8 @@
 sidebar_position: 1
 ---
 
-# 运行要求
+# System Requirements
 
-KF是macOS应用程序，不支持Windows和Linux，暂时也没有支持iOS和Android的计划。
-KF有算力要求，仅支持苹果M系列芯片，不支持英特尔芯片，其流畅运行需要M2及以上芯片、内存最少16G。
+KF is a macOS application and does not support Windows or Linux. There are currently no plans to support iOS or Android.
+
+KF has computing power requirements and only supports Apple's M-series chips. It does not support Intel chips. Smooth operation requires an M.2 or higher chip and at least 16GB of RAM.

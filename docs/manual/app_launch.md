@@ -2,22 +2,38 @@
 sidebar_position: 2
 ---
 
-# 启动过程
+# Startup Process
 
-启动过程分为四步，为了简化软件逻辑，把复杂的运行环境要求在启动期实现。
-- 自动创建Python运行环境
-    - 首次启动会拉取所需的运行库耗时较长，可在数据观察窗看到进度细节。
-    - 非首次启动则会检查和更新运行环境，时间将会大大缩短
-    - 手动操作方式(manual)，确认pyproject.toml在，uv sync --
-- 启动Python数据接口服务器
-    - 首次启动需要编译代码成为运行缓存，耗时较长
-    - 再次启动时间将会大大缩短
-- 下载全能小模型
-    - 首次下载耗时较长。它能优先利用本地算力进行**力所能及的**工作，使敏感数据不出本机。
-    - 全能：能根据文件内容打标签，能给文件内的文字、图片、表格建立知识索引，能识别图片内容进行问答，能去除知识片段中的敏感信息。
-    - 手动操作方式(manual),download-model.sh
-- 申请授权“完全磁盘访问权限”。
-    - 本App获得权限后才能读取您的文件，可以通过给文件建立索引的方式帮用户搜索和发现文件及知识。请放心KF不会删除和改动您的文件文容，仅仅是读取。
-    - 界面提示权限不足，点击按钮打开系统设置
-    - 浏览定位到`/Application/KnowledgeFocus.app`授权
-    - 获得“完全磁盘访问权限”后会提示点击按钮重启应用，稍等如果观察到KF没有自动启动，则手动做。
+The startup process consists of four steps. To simplify the software logic, complex runtime environment requirements are implemented during startup.
+
+- Automatically create the Python runtime environment
+
+- The first startup will fetch the necessary runtime libraries, which takes a relatively long time. Progress details can be viewed in the data observation window.
+
+- Subsequent startups will check and update the runtime environment, significantly reducing the time.
+
+- Manual operation method (manual): Ensure pyproject.toml is present, uv sync --
+
+- ​​Start the Python data interface server
+
+- The first startup requires compiling code into a runtime cache, which takes a relatively long time.
+
+- Subsequent startups will significantly reduce the time.
+
+- Download the all-in-one small model
+
+- The first download takes a relatively long time. It prioritizes utilizing local computing power for **capable** tasks, ensuring sensitive data does not leave the local machine.
+
+- All-in-one: It can tag files based on their content, create knowledge indexes for text, images, and tables within files, recognize image content for question answering, and remove sensitive information from knowledge fragments.
+
+- Manual operation method (manual): download-model.sh
+
+- Request "full disk access permissions".
+
+- This app needs permission to read your files. It can help users search and discover files and knowledge by indexing them. Rest assured, KF will not delete or modify your file content; it only reads them.
+
+- If the interface prompts insufficient permissions, click the button to open system settings.
+
+- Navigate to `/Application/KnowledgeFocus.app` and grant permissions.
+
+- After obtaining "Full Disk Access," you will be prompted to click the button to restart the application. Wait a moment. If KF does not start automatically, do so manually.
