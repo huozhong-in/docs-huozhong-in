@@ -2,21 +2,38 @@
 sidebar_position: 5
 ---
 
-# 与您的文件对话
+# Talking with Your Files
 
-### 关联文件到聊天会话
-#### 固定文件(多模态向量化)
-“固定文件”是将文件跟具体会话关联起来的交互方式，本质是启动对文件内容进行多模态向量化，也就是将知识文件中的文本、图片、表格抽离成独立知识片段，随后建立知识索引，以供以后对话时按需取用。
-#### 多模态检索和答案合成
-多模态检索即可以通过文字搜到语义上有相关性的文字片段、图片描述和表格描述，并找到原始的文字位置上下文、图片原图、原始表格，这项技术能最大程度的从整个库中找到最相关的知识。
-根据“召回”的原始知识，提供给本地全能(主要是视觉能力)小模型或是商业模型API，结合搜索引擎等外部数据工具，合成高质量的、几乎无幻觉的回复答案。
-#### 知识片段去除敏感信息
-每次提交给商业模型API之前本地小模型会根据**配置项-数据预处理策略**对知识片段进行脱敏，充分保护数据隐私的情况下又能利用商业模型API的强大之处。
-- 主界面中间区域下方是数据观察窗，能看到知识片段的召回情况。
-- 每次提交之前需要人为确认和审核脱敏结果
-#### 使用工具
-合成答案前在互联网上进行一番搜索可以大大提高回复质量，降低幻觉。
-会话的输入区可选配置搜索工具Tavily，在其官网注册后申请key配置进来。
-#### “AI与你共读PDF”
-共享阅读进度和视野需要“屏幕录制”权限
-进入共读模式后会随时检查PDF阅读器窗口的情况，被遮挡或最小化都会有相应处理逻辑，保障共读体验。
+### Linking Files to Chat Sessions
+
+#### 1. Pinned Files (Multimodal Vectorization)
+
+"Pinned files" is an interactive method that links files to specific conversations. Essentially, it initiates multimodal vectorization of file content, extracting text, images, and tables from knowledge files into independent knowledge fragments, and then building a knowledge index for later retrieval during conversations.
+
+![Linking files to conversations](/img/pin_file01.png)
+
+#### 2. Multimodal Retrieval and Answer Synthesis
+
+Multimodal retrieval allows you to find semantically relevant text fragments, image descriptions, and table descriptions, and locate the original text context, original image, and original table. This technology maximizes the retrieval of the most relevant knowledge from the entire database.
+
+Based on the original knowledge retrieved, it is provided to a local all-around (primarily visual) mini-model or a business model API. Combined with external data tools such as search engines, high-quality, virtually hallucinatory responses are synthesized.
+
+![Retrieving and Retrieving Knowledge Fragments](/img/pin_file02.png)
+
+#### 3. Removing Sensitive Information from Knowledge Fragments (todo)
+
+Before each submission to the business model API, the local mini-model desensitizes the knowledge fragments according to the **configuration item - data preprocessing strategy**, fully protecting data privacy while leveraging the power of the business model API.
+
+- The data observation window is located at the bottom center of the main interface, showing the recall status of the knowledge fragments.
+
+- Manual confirmation and review of the desensitization results are required before each submission.
+
+#### 4. Using Tools
+
+Searching the internet before synthesizing the answer can significantly improve response quality and reduce hallucinations.
+
+The input area of ​​the conversation can optionally configure the search tool Tavily. Register on its official website and apply for a key to configure it.
+
+#### 5. "AI Reads PDFs with You"
+
+Furthermore, you can chat with AI while reading PDFs for a unique, companion-style reading experience. See [Co-reading Mode](/docs/manual/co_reading) for details.

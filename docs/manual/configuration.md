@@ -2,24 +2,66 @@
 sidebar_position: 6
 ---
 
-# 偏好配置
+# Configuration
 
-#### 授权文件夹
-为了减少噪音干扰，尽量只呈现携带“用户可感知知识”的文件，KF管理文件夹的设计采用白名单和黑名单结合的方式。
+## 1. Authorized Folders
 
-黑白名单
-- 白名单条目是需要被扫描和监控的文件夹，默认的白名单是macOS操作系统常见文件夹：桌面、文档、下载、图片、音乐、视频这六个。也可以新建白名单条目，指定磁盘上任意文件夹。
-- 黑名单是在白名单文件夹下需要被排除掉的文件夹，也就是你不想让KF扫描和关注的文件夹，这样它下面的文件和内容就不会被发现和处理，KF后续的功能中也不会有任何体现。
-KF将会
-- 启动时全面扫描白名单每一个文件夹，结合扩展名过滤、排除文件夹、bundle过滤、黑名单子文件夹四类规则，最终将符合条件的文件保存到“粗筛文件结果数据表”中，供进一步利用。
-- 监控文件夹变动，每当文件夹下有文件变动时(新增、修改、删除)，结合扩展名过滤、排除文件夹、bundle过滤、黑名单四类规则进行判定，适当将变动同步到上述数据表中，供进一步利用。
-#### 文件扫描规则
-- 文件扩展名。哪些扩展名是携带知识的，需要能被搜索发现和显式利用的。
-- 文件分类。用来帮助管理文件扩展名。
-- 过滤规则。过滤“无用”文件夹名字，如开源项目的`.git`文件夹，前端项目的`node_modules`运行库文件夹，这些文件夹内没有用户知识文件。
-- bundle类文件。macOS有一类特殊文件，看起来是文件其实是文件夹，应该将其看待为一个整体——其内部的文件不需要扫描、其内文件变化不应该关注，只关注“外壳”的元数据变化即可。
-#### 配置模型参数
-- 关联场景。文件自动打标签依赖模型的结构化数据输出能力。多模态向量化依赖视觉和向量化能力。多模态检索依赖文本和视觉能力。需要配置每种能力由哪个模型来提供。
-- 提供商参数。配置本机第三方软件或在线的商业模型API的连接参数。
-- 拉取模型列表。从提供商API拉取当前可提供服务的模型列表，包括能力、上下文窗口等预置参数。
-- 测试模型能力。测试确认上述模型是否有文本问答能力、结构化数据输出能力、视觉能力、向量化能力。
+To reduce noise interference and display only files containing "user-perceptible knowledge," KF's folder management design uses a combination of whitelists and blacklists.
+
+### Whitelists and Blacklists
+
+- Whitelist entries are folders that need to be scanned and monitored. The default whitelist consists of six common macOS folders: Desktop, Documents, Downloads, Pictures, Music, and Videos. You can also create new whitelist entries to specify any folder on the disk.
+
+- The blacklist consists of folders that need to be excluded from the whitelist—folders you don't want KF to scan or monitor. This prevents files and content within these folders from being discovered and processed, and they won't be reflected in subsequent KF functions.
+
+### Operating Mechanism
+
+- Upon startup, a full scan of every folder in the whitelist is performed. Combining rules for extension filtering, excluded folders, bundle filtering, and blacklist subfolders, files that meet the criteria are saved to a "coarse-screened file results table" for further use.
+
+- Monitor folder changes. Whenever files within a folder are modified (added, modified, deleted), use four types of rules—extension filtering, excluded folders, bundle filtering, and blacklisting—to determine the changes and appropriately synchronize them to the aforementioned data table for further utilization.
+
+## 2. File Scanning Rules
+
+### a) File Extensions
+
+Which extensions carry knowledge and need to be searchable and explicitly usable?
+
+### b) File Categories
+
+Used to help manage file extensions.
+
+### c) Filtering Rules
+
+Filter "useless" folder names, such as the `.git` folder in open-source projects or the `node_modules` runtime library folder in front-end projects. These folders do not contain user-generated knowledge files.
+
+### d) Bundle-like Files
+
+macOS has a special type of file that appears to be a file but is actually a folder. It should be treated as a whole—the files inside do not need to be scanned, and changes to those files should not be monitored; only changes to the "shell" metadata are needed.
+
+## 3. Configuring Model Parameters
+
+### a) Associating Scenarios
+
+This requires configuring which model provides each capability.
+
+- Automatic file tagging depends on the model's structured data output capability.
+
+- Multimodal vectorization depends on visual and vectorization capabilities.
+
+- Multimodal retrieval depends on text and visual capabilities.
+
+### b) Provider Parameters
+
+Configure the connection parameters for your local third-party software or online commercial model API.
+
+Note that when using certain providers within China, you need to enable the "Use proxy to forward requests" option and ensure that the proxy server itself is functioning correctly.
+
+### c) Retrieving the Model List
+
+Retrieve a list of currently available models from the provider API, including capabilities, context windows, and other preset parameters.
+
+### d) Testing Model Capabilities
+
+Test to confirm whether the above models have text question answering capabilities, structured data output capabilities, visual capabilities, and vectorization capabilities.
+
+The model name will only appear in the "Associated Scenarios" candidate entries after a successful test.

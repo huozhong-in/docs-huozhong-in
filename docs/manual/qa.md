@@ -4,21 +4,38 @@ sidebar_position: 8
 
 # Q and A
 
-### 常见问题
+## Frequently Asked Questions
 
-中国境内启动KF后遇到障碍。
-> 需要网络能直达`pypi.org`和`huggingface.co`，如果不能，可在以下方式中选择
+### Obstacles to using KF within China
 
-    - 全局代理
-    - 环境变量(代理设置)
-    - 设置UV_INDEX环境变量，指定镜像站
-    - 进入主界面后可单独配置代理服务器，并指定模型提供商请求走代理。
+Normal use of KF requires a direct network connection to `pypi.python.org` and `huggingface.co`. If you encounter problems, the following methods are for your reference:
 
-本机发热厉害，风扇狂转。
-> 给文件打标签是自动的，尽量给每一个经过粗筛确认后属于个人知识文件的打上标签可以尽量好的发现历史知识。从界面可以看到有总体进度。
+- macOS System Global Proxy Server
 
-多模态向量化太慢。
-> 这个技术处理过程工作量大，涉及到解析、抽取、分块、向量化和一系列数据库操作，尤其是PDF页多的情况下，平均10秒一页。建议利用闲时把最近可能要用的文件依次做pin的动作，本应用会依次处理，然后可以在任意会话中直接使用。
+Use your local smart proxy software (such as Clash) to "set it as the system proxy," allowing applications that support this protocol (including KF) to forward requests through the smart proxy software, thus overcoming network obstacles.
 
-小模型回复质量不好。
-> 这是小模型的局限性，建议大小模型结合使用，至少“多模态答案合成”场景配置成够聪明的商业模型API，这属于云端一体的智能体编排策略。
+- Configure a proxy for KF separately via environment variables
+
+`https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890 open /Applications/KnowledgeFocus.app`
+
+- Specify a domestic mirror site via environment variables
+
+`UV_DEFAULT_INDEX="https://pypi.tuna.tsinghua.edu.cn/simple" HF_ENDPOINT="https://hf-mirror.com" open /Applications/KnowledgeFocus.app`
+
+- Use a proxy when requesting business model APIs
+
+After entering the main interface, you can configure the proxy on the configuration page and specify that model provider requests should go through the proxy
+
+![set proxy](/img/qa01.png)
+
+### Computer overheating, fan spinning wildly
+
+> Document tagging is automatic. Tagging each document that has passed the initial screening and is confirmed to belong to personal knowledge can help discover historical knowledge more effectively. The overall progress is displayed on the interface.
+
+### Multimodal Vectorization is Too Slow
+
+> This technology is labor-intensive, involving parsing, extraction, segmentation, vectorization, and a series of database operations, especially with many PDF pages, averaging 10 seconds per page. It is recommended to use idle time to pin the most recently used files sequentially. The application will process them sequentially, and then they can be used directly in any session.
+
+### Poor Quality of Small Model Responses
+
+> This is a limitation of small models. It is recommended to use a combination of large and small models and configure an online commercial large model API. It is recommended to configure a sufficiently intelligent commercial model API in the "multimodal answer synthesis" scenario, which is part of a cloud-integrated intelligent agent orchestration strategy.

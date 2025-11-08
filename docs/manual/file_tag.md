@@ -2,8 +2,14 @@
 sidebar_position: 4
 ---
 
-# 按标签搜索文件
+# Search Files by Tag
 
-用户点击标签后，打过这个标签的文件们将会出现在文件列表区。
-能被解析和打标签的文件类型，扩展名有['pdf', 'pptx', 'docx', 'xlsx', 'xls', 'md', 'markdown', 'txt'] 。
-技术上支持多标签聚合，也就是通过多个标签联合搜索的方式缩小文件范围，现有产品形态没有提供这种能力。
+The top left corner of the app sidebar displays a file tag cloud. These tags are generated automatically by parsing file content, helping users discover files that haven't been found for years.
+
+Because parsing file content is time-consuming, the interface updates after each successful tagging, showing the overall progress as "Number of Tagged Files / Total Number of Parsable Files".
+
+- After a user clicks on a tag, files tagged with that tag will appear in the file list area, sharing the same results area as the search function.
+
+- File types that can be parsed and tagged include the following extensions: ['pdf', 'pptx', 'docx', 'xlsx', 'xls', 'md', 'markdown', 'txt'].
+
+- Technically, multi-tag aggregation is supported, meaning the file range can be narrowed down by combining multiple tags for searching. This feature is not currently provided in the product design; please let us know if you have any suggestions.
