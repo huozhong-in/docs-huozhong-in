@@ -4,26 +4,25 @@ sidebar_position: 3
 
 # Search for Files by Keyword
 
-The file list area is located at the top center of the main interface. You can search by keyword using the full path, which can be either the filename or the folder name containing the file. Note that searching by file content is not supported.
+The file list area is located in the upper center of the main interface. You can search by keyword using the full path, which includes both the filename and the folder name. Note that content-based search is not supported.
 
-:::tip The file type extensions that can be searched are configured in [File Recognition Rules](/docs/manual/configuration)
-
+:::tip
+The file type extensions that can be searched are configured in [File Recognition Rules](/docs/manual/configuration).
 :::
 
 ![Active File Search](/img/search_file01.png)
 
-1. Press cmd+k to quickly locate the search bar, enter the path keyword, and press Enter to search.
+1. Press `Cmd+K` to quickly focus the search bar, enter a path keyword, and press Enter to search.
+2. When files appear in the list, you can directly open Finder to locate the file.
 
-2. Once the file appears in the list, you can directly open Finder and locate the file.
+## File List Context Menu
 
-## File List Floating Menu
+The file list provides different context menus for different file types:
 
-Different floating menus are available for different file types in the file list.
+- **Image Q&A**, supporting `["png", "jpg", "jpeg", "gif", "webp"]` formats
 
-- Image Q&A, supporting `["png", "jpg", "jpeg", "gif", "webp"]` formats
+- **Pin File**, supporting `['pdf', 'docx', 'pptx', 'txt', 'md', 'markdown']` document formats
 
-- Pinned Files, supporting `['pdf', 'docx', 'pptx', 'txt', 'md', 'markdown']` document formats
+> The pin operation associates the file with the current conversation/session and begins analyzing the file content to build a knowledge index. See [Multimodal Retrieval](/docs/manual/pin_file) for details.
 
-> The purpose of the pin operation is to associate the file with the current conversation/session and simultaneously begin analyzing the file content to build a knowledge index. See [Multimodal Retrieval](/docs/manual/pin_file) for details.
-
-- Co-reading mode, currently only available for PDFs. See [Co-reading Mode](/docs/manual/co_reading) for details.
+- **Co-reading Mode**, currently available only for PDFs. See [Co-reading Mode](/docs/manual/co_reading) for details.

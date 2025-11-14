@@ -2,6 +2,6 @@
 sidebar_position: 1
 ---
 
-# System architect
+# System Architecture
 
-coming soon
+Coming soon.
